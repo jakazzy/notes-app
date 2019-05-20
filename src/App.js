@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Note from "./Note";
 import CreateNote from "./CreateNote";
 
-
 class App extends Component{
   state ={            
     notes:[
@@ -22,10 +21,14 @@ class App extends Component{
     })
   }
 
+  editNote = (id) =>{
+    console.log(id);
+  }
+
   render(){
     return ( <div className = "App">
     <CreateNote addCard ={ this.addCard }/>
-        <Note notes= {this.state.notes}/>
+        <Note notes= {this.state.notes} editNote ={this.editNote}/>
         </div>
     )
   }

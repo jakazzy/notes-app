@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+import ContentEditable from 'react-contenteditable'
 
 class Note extends Component{
- 
+  
     render(){
       const { notes } = this.props;
       const notesList = notes.length ? ( 
@@ -12,7 +13,7 @@ class Note extends Component{
                   <div className="card medium">
                     <nav className="red darken-1">
                       <div className="nav-wrapper">
-                        <div className="card-title center">{ note.title }</div>
+                        <div tabIndex="0" contentEditable="true" onClick={() =>{this.props.editNote(index)}} className="card-title center">{ note.title }</div>
                       </div>
                     </nav>
                     <div className="card-content">
