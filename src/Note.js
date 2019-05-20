@@ -1,17 +1,13 @@
 import React, { Component } from 'react';
 
 class Note extends Component{
-  state ={            
-    notes:[
-      {title: "Notes on React JS", body:"Lorem ipsum dolor sit, amet consectetur adipisicing elit.", id:1},
-      {title: "vuejs", body:"Esse dolorum tempore, reprehenderit quibusdam perferendis odit sint ut at enim delectus vitae", id:2},
-      {title: "sed est blanditiis ea, veniam commodi eligendi eum repellendus.", id: 3}]
-  }
+ 
     render(){
-      const { notes } = this.state;
+      const { notes } = this.props;
       const notesList = notes.length ? ( 
-        notes.map((note) => {
-          return( <div key={ note.id } className="row" >
+        notes.map((note, index) => {
+          return( <div key={ index } className="row" >
+          console.log("key: ", { index })
                   <div className="col s12  m8 offset-m2">
                   <div className="card medium">
                     <nav className="red darken-1">
