@@ -39,10 +39,7 @@ class Note extends Component{
       ):(<div className="center">No notes made yet</div> )
       return ( 
       <div >
-        
-              { notesList }
-              
-            
+        { notesList } 
         </div>
 
       )
