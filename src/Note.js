@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
 
 class Note extends Component{
+  state ={            
+    notes:[
+      {title: "Notes on React JS", body:"Lorem ipsum dolor sit, amet consectetur adipisicing elit.", id:1},
+      {title: "vuejs", body:"Esse dolorum tempore, reprehenderit quibusdam perferendis odit sint ut at enim delectus vitae", id:2},
+      {title: "sed est blanditiis ea, veniam commodi eligendi eum repellendus.", id: 3}]
+  }
     render(){
       return ( <div className="row">
         <div className="col s12  m8 offset-m2">
