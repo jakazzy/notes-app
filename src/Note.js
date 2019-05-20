@@ -25,7 +25,6 @@ class Note extends Component{
                     <div className="card-action">
                       <span className="left">Mon 20 May, 2019 at 12:42AM</span>
                       <div className="right">
-                          <span className="btn-floating btn-medium waves-effect waves-light red"><i className="material-icons">add</i></span>
                           <span className="btn-floating btn-medium waves-effect waves-light red"><i className="material-icons">delete</i></span>
                           <span className="btn-floating btn-medium waves-effect waves-light red"><i className="material-icons">edit</i></span>
                       </div>
