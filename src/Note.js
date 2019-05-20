@@ -6,10 +6,8 @@ class Note extends Component{
         <div className="col s12  m8 offset-m2">
           <div className="card medium">
               <nav className="red darken-1">
-                <div className="nav-wrapper ">
-                  <div className="col s12">
+                <div className="nav-wrapper">
                     <div className="card-title center">Card Title</div>
-                  </div>
                 </div>
               </nav>
               <div className="card-content">
