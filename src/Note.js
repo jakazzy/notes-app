@@ -13,11 +13,21 @@ class Note extends Component{
                   <div className="card medium">
                     <nav className="red darken-1">
                       <div className="nav-wrapper">
-                        <div tabIndex="0" contentEditable="true" onClick={() =>{this.props.editNote(index)}} className="card-title center">{ note.title }</div>
+                        <div tabIndex="0" className="card-title center">
+                        <ContentEditable
+                          html ={ note.title }
+                          disabled = {false}
+                          onChange ={this.props.editNote(index)}
+                        />
+                        </div>
                       </div>
                     </nav>
                     <div className="card-content">
-                      <p>{  note.body}</p>
+                      <ContentEditable
+                        html = {  note.body}
+                        disabled ={ false }
+                        onChange = {this.props.editNote(index)}
+                      />
                     </div>
                     <div className="card-action">
                       <span className="left">Mon 20 May, 2019 at 12:42AM</span>
