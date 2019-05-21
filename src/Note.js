@@ -2,6 +2,15 @@ import React, { Component } from 'react'
 import ContentEditable from 'react-contenteditable'
 
 class Note extends Component{
+
+  state={
+    content: ""
+  }
+  
+  
+  handlechange =(e) =>{
+console.log()
+  }
   
     render(){
       const { notes } = this.props;
@@ -14,23 +23,20 @@ class Note extends Component{
                     <nav className="red darken-1">
                       <div className="nav-wrapper">
                         <div tabIndex="0" className="card-title center">
-                        <ContentEditable
-                          html ={ note.title }
-                          disabled = {false}
-                          onChange ={this.props.editNote(index)}
-                        />
+                        <p><span className="left date">Mon 20 May, 2019 at 12:42AM</span></p>
                         </div>
                       </div>
                     </nav>
                     <div className="card-content">
                       <ContentEditable
-                        html = {  note.body}
+                        html = {  note.content}
                         disabled ={ false }
                         onChange = {this.props.editNote(index)}
+                        className ="content"
                       />
                     </div>
                     <div className="card-action">
-                      <span className="left">Mon 20 May, 2019 at 12:42AM</span>
+                      
                       <div className="right">
                           <span className="btn-floating btn-medium waves-effect waves-light red"><i className="material-icons">delete</i></span>
                           <span className="btn-floating btn-medium waves-effect waves-light red"><i className="material-icons">edit</i></span>

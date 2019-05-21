@@ -5,9 +5,9 @@ import CreateNote from "./CreateNote";
 class App extends Component{
   state ={            
     notes:[
-      {title: "Notes on React JS", body:"Lorem ipsum dolor sit, amet consectetur adipisicing elit.", id:0 },
-      {title: "vuejs", body:"Esse dolorum tempore, reprehenderit quibusdam perferendis odit sint ut at enim delectus vitae", id:1},
-      {title: "sed est blanditiis ea", body:"veniam commodi eligendi eum repellendus.", id: 2}]
+      {content:"Lorem ipsum dolor sit, amet consectetur adipisicing elit.", id:0 },
+      {content:"Esse dolorum tempore, reprehenderit quibusdam perferendis odit sint ut at enim delectus vitae", id:1},
+      {content:"veniam commodi eligendi eum repellendus.", id: 2}]
   }  
 
   addCard =(note) =>{

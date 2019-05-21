@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 
 class CreateNote extends Component {
     state = {
-        title: "add new title",
-        body: "create new note"
+        content: "create new note"
     }
 
     newCard = ()=>{
