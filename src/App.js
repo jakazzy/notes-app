@@ -10,7 +10,10 @@ class App extends Component{
       {content:"veniam commodi eligendi eum repellendus.", id: 2}]
   }  
 
+  
+  
   addCard =(note) =>{
+    note.id =Math.random()
     console.log("this is a new card1 : ", this.state.notes);
     console.log("noteid: ",note.id);
     console.log("this is a new card:","addcard fxn");
@@ -22,7 +25,7 @@ class App extends Component{
   }
 
   editNote = (id) =>{
-    console.log(id);
+    // console.log(id);
   }
 
   render(){

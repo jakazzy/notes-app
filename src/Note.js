@@ -9,14 +9,16 @@ class Note extends Component{
   
   
   handlechange =(e) =>{
-console.log()
+    this.setState({
+      content: e.target.value
+    })
   }
   
     render(){
       const { notes } = this.props;
       const notesList = notes.length ? ( 
         notes.map((note, index) => {
-          return( <div key={ index } className="row" >
+          return( <div key={ note.id } className="row" >
           console.log("key: ", { index })
                   <div className="col s12  m8 offset-m2">
                   <div className="card medium">
@@ -31,7 +33,8 @@ console.log()
                       <ContentEditable
                         html = {  note.content}
                         disabled ={ false }
-                        onChange = {this.props.editNote(index)}
+                        // onChange = {this.props.editNote(index)}
+                        onChange ={ this.handlechange }
                         className ="content"
                       />
                     </div>
