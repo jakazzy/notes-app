@@ -45,7 +45,7 @@ deleteNote =(id) =>{
 
   render(){
     const notesList = this.state.notes.map((note) =>{ 
-     return(<Note note= {note} key={note.id} updateNote ={this.updateNote}/>)
+     return(<Note note= {note} key={note.id} updateNote ={this.updateNote}  deleteNote = { this.deleteNote }/>)
     })
 
     return ( 
