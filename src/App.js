@@ -14,25 +14,35 @@ class App extends Component{
   
   addCard =(note) =>{
     note.id =Math.random()
-    console.log("this is a new card1 : ", this.state.notes);
-    console.log("noteid: ",note.id);
-    console.log("this is a new card:","addcard fxn");
     let notes = [ note, ...this.state.notes]
-    console.log("this is a new card2 : ", notes);
     this.setState({
       notes: notes
     })
   }
 
-  editNote = (id) =>{
-    // console.log(id);
+  updateNote = (updatedNote) =>{
+    this.setState( state => {
+      const notes = state.notes.map((note) => {
+        if(note.id===updatedNote.id){
+          note.content = updatedNote.content;
+        }
+        return note
+      })
+      return {notes}
+    })
   }
+  
 
   render(){
-    return ( <div className = "App">
-    <CreateNote addCard ={ this.addCard }/>
-        <Note notes= {this.state.notes} editNote ={this.editNote}/>
-        </div>
+    const notesList = this.state.notes.map((note) =>{ 
+     return(<Note note= {note} key={note.id} updateNote ={this.updateNote}/>)
+    })
+
+    return ( 
+      <div className = "App">
+        <CreateNote addCard ={ this.addCard }/>
+        { notesList }
+      </div>
     )
   }
     

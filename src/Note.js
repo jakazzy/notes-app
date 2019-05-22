@@ -4,7 +4,7 @@ import ContentEditable from 'react-contenteditable'
 class Note extends Component{
 
   state={
-    content: ""
+    content: this.props.note.content
   }
   
   
@@ -13,13 +13,18 @@ class Note extends Component{
       content: e.target.value
     })
   }
+
+  handleSave = ( ) =>{
+    const updatedNote ={
+      id : this.props.note.id,
+      content :this.state.content
+    }
+    this.props.updateNote(updatedNote)
+  }
   
     render(){
-      const { notes } = this.props;
-      const notesList = notes.length ? ( 
-        notes.map((note, index) => {
-          return( <div key={ note.id } className="row" >
-          console.log("key: ", { index })
+      
+          return( <div className="row" >
                   <div className="col s12  m8 offset-m2">
                   <div className="card medium">
                     <nav className="red darken-1">
@@ -31,11 +36,11 @@ class Note extends Component{
                     </nav>
                     <div className="card-content">
                       <ContentEditable
-                        html = {  note.content}
+                        html = { this.state.content}
                         disabled ={ false }
-                        // onChange = {this.props.editNote(index)}
                         onChange ={ this.handlechange }
-                        className ="content"
+                        className = "content"
+                        onBlur ={this.handleSave}
                       />
                     </div>
                     <div className="card-action">
@@ -50,14 +55,6 @@ class Note extends Component{
 
                   </div>
                   )
-        })
-      ):(<div className="center">No notes made yet</div> )
-      return ( 
-      <div >
-        { notesList } 
-        </div>
-
-      )
     }
       
   }

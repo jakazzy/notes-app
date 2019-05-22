@@ -5,7 +5,7 @@ class CreateNote extends Component {
         content: "create new note"
     }
 
-    newCard = ()=>{
+    newCard = () => {
         console.log("printing state1: ",this.state)
         this.props.addCard(this.state)
         console.log("printing state: ",this.state)
