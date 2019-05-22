@@ -34,6 +34,9 @@ class App extends Component{
 
   }
   
+deleteNote =(id) =>{
+  
+}
 
   render(){
     const notesList = this.state.notes.map((note) =>{ 
