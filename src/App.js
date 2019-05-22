@@ -32,7 +32,6 @@ class App extends Component{
       return {notes}
     })
 
-    console.log(this.state)
   }
   
 
