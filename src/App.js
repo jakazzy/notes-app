@@ -3,6 +3,7 @@ import Note from "./Note";
 import CreateNote from "./CreateNote";
 
 class App extends Component{
+  
   state ={            
     notes:[
       {content:"Lorem ipsum dolor sit, amet consectetur adipisicing elit.", id:0 },
@@ -30,6 +31,8 @@ class App extends Component{
       })
       return {notes}
     })
+
+    console.log(this.state)
   }
   
 
