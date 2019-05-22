@@ -38,6 +38,9 @@ deleteNote =(id) =>{
   let notes = this.state.notes.filter( (note) => {
    return note.id !== id
   })
+  this.setState({
+    notes
+  })
 }
 
   render(){
