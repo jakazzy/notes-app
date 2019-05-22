@@ -35,7 +35,9 @@ class App extends Component{
   }
   
 deleteNote =(id) =>{
-  let notes = this.state.notes.filter()
+  let notes = this.state.notes.filter( (note) => {
+   return note.id !== id
+  })
 }
 
   render(){
