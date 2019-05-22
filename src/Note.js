@@ -46,7 +46,7 @@ class Note extends Component{
                     <div className="card-action">
                       
                       <div className="right">
-                          <span className="btn-floating btn-medium waves-effect waves-light red"><i className="material-icons">delete</i></span>
+                          <span onclick ={ () => {this.props.delete(this.props.note.id)}} className="btn-floating btn-medium waves-effect waves-light red"><i className="material-icons">delete</i></span>
                           <span className="btn-floating btn-medium waves-effect waves-light red"><i className="material-icons">edit</i></span>
                       </div>
                     </div>
