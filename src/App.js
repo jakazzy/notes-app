@@ -19,6 +19,7 @@ class App extends Component{
     this.setState({
       notes: notes
     })
+    localStorage.setItem('notes', JSON.stringify(notes));
   }
 
   updateNote = (updatedNote) =>{
@@ -31,7 +32,6 @@ class App extends Component{
       })
       return {notes}
     })
-
   }
   
 deleteNote =(id) =>{
@@ -45,7 +45,11 @@ deleteNote =(id) =>{
 
   render(){
     const notesList = this.state.notes.map((note) =>{ 
-     return(<Note note= {note} key={note.id} updateNote ={this.updateNote}  deleteNote = { this.deleteNote }/>)
+     return(
+     <Note note= {note} 
+     key={note.id} 
+     updateNote ={this.updateNote}  
+     deleteNote = { this.deleteNote }/>)
     })
 
     return ( 
