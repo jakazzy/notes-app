@@ -14,11 +14,15 @@ class App extends Component{
   
   
   addCard =(note) =>{
-    note.id =Math.random()
-    let notes = [ note, ...this.state.notes]
+    const lastId = this.state.notes[this.state.notes.length - 1].id;
+    console.log(lastId);
+    note.id = lastId + 1;
+    console.log('note:',note, 'note.id:',note.id);
+    let notes = [...this.state.notes, note]
     this.setState({
       notes: notes
     })
+    console.log(this.state);
     localStorage.setItem('notes', JSON.stringify(notes));
   }
 
